@@ -1,0 +1,471 @@
+/* ===================================================
+   GOOGLE FONT
+=================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+/* ===================================================
+   ROOT VARIABLES
+=================================================== */
+
+:root {
+
+  /* Colors */
+  --primary: #5b5fff;
+  --secondary: #00b7ff;
+  --accent: #00c896;
+
+  --dark: #111827;
+  --dark-light: #1f2937;
+
+  --text: #4b5563;
+  --text-light: #6b7280;
+
+  --white: #ffffff;
+
+  /* Gradients */
+  --gradient-primary:
+    linear-gradient(
+      135deg,
+      #5b5fff,
+      #7b5cff,
+      #00b7ff
+    );
+
+  --gradient-green:
+    linear-gradient(
+      135deg,
+      #2e7d32,
+      #43a047,
+      #00c896
+    );
+
+  /* Shadows */
+  --shadow-sm:
+    0 6px 20px rgba(0, 0, 0, 0.06);
+
+  --shadow-md:
+    0 12px 35px rgba(0, 0, 0, 0.08);
+
+  --shadow-lg:
+    0 24px 60px rgba(91, 95, 255, 0.15);
+
+  /* Radius */
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 34px;
+
+  /* Transition */
+  --transition:
+    all 0.35s ease;
+
+}
+
+/* ===================================================
+   GLOBAL RESET
+=================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===================================================
+   HTML + BODY
+=================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8fbff 0%,
+      #f4f8ff 50%,
+      #ffffff 100%
+    );
+
+  color: var(--dark);
+
+  overflow-x: hidden;
+
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===================================================
+   CUSTOM SCROLLBAR
+=================================================== */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf2ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      180deg,
+      #5b5fff,
+      #00b7ff
+    );
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #4b4bff,
+      #00a0e8
+    );
+}
+
+/* ===================================================
+   GLOBAL ELEMENTS
+=================================================== */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ===================================================
+   GLOBAL CONTAINER
+=================================================== */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===================================================
+   SECTION SPACING
+=================================================== */
+
+section {
+  position: relative;
+}
+
+/* ===================================================
+   GLASS EFFECT
+=================================================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* ===================================================
+   GLOBAL BUTTONS
+=================================================== */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: none;
+  outline: none;
+
+  padding: 18px 34px;
+
+  border-radius: 18px;
+
+  background: var(--gradient-primary);
+
+  color: var(--white);
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 15px 35px rgba(91, 95, 255, 0.25);
+}
+
+/* Shine Effect */
+.btn-primary::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+
+  transition: 0.8s;
+}
+
+.btn-primary:hover::before {
+  left: 120%;
+}
+
+/* Hover */
+.btn-primary:hover {
+  transform:
+    translateY(-5px)
+    scale(1.03);
+
+  box-shadow:
+    0 25px 55px rgba(91, 95, 255, 0.35);
+}
+
+/* ===================================================
+   SECONDARY BUTTON
+=================================================== */
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px 34px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(91, 95, 255, 0.14);
+
+  background: rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(12px);
+
+  color: var(--dark);
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-5px);
+
+  background: var(--white);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ===================================================
+   GLOBAL TITLES
+=================================================== */
+
+.section-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 850;
+
+  line-height: 1.08;
+  letter-spacing: -2px;
+
+  color: var(--dark);
+
+  margin-bottom: 22px;
+}
+
+.section-title span {
+  background: var(--gradient-primary);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  font-size: 1.12rem;
+  line-height: 1.9;
+
+  color: var(--text-light);
+}
+
+/* ===================================================
+   BADGES / TAGS
+=================================================== */
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 22px;
+  margin-bottom: 26px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(12px);
+
+  color: var(--primary);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  box-shadow:
+    0 10px 25px rgba(91, 95, 255, 0.08);
+}
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1s ease both;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ===================================================
+   SELECTION COLOR
+=================================================== */
+
+::selection {
+  background: rgba(91, 95, 255, 0.2);
+  color: #111827;
+}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+
+@media (max-width: 992px) {
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 3.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .section-tag {
+    font-size: 0.85rem;
+    padding: 9px 18px;
+  }
+}

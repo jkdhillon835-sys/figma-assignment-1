@@ -1,0 +1,422 @@
+/* ===== Premium Digital Confidence Section ===== */
+
+.digital-confidence {
+  position: relative;
+  overflow: hidden;
+
+  padding: 120px 30px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(76, 175, 80, 0.14),
+      transparent 30%),
+
+    radial-gradient(circle at bottom right,
+      rgba(0, 200, 150, 0.12),
+      transparent 35%),
+
+    linear-gradient(
+      135deg,
+      #f5fff7 0%,
+      #ecfff1 45%,
+      #f7fffa 100%
+    );
+
+  isolation: isolate;
+}
+
+/* ===== Background Glow ===== */
+
+.digital-confidence::before,
+.digital-confidence::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  z-index: -1;
+}
+
+.digital-confidence::before {
+  width: 380px;
+  height: 380px;
+
+  top: -120px;
+  left: -100px;
+
+  background: rgba(76, 175, 80, 0.18);
+
+  animation: greenGlow 8s ease-in-out infinite;
+}
+
+.digital-confidence::after {
+  width: 320px;
+  height: 320px;
+
+  bottom: -120px;
+  right: -100px;
+
+  background: rgba(0, 200, 150, 0.16);
+
+  animation: greenGlow 10s ease-in-out infinite reverse;
+}
+
+/* Glow Animation */
+@keyframes greenGlow {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(18px, -18px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ===== Top Tag ===== */
+
+.digital-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 22px;
+  margin-bottom: 28px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(12px);
+
+  color: #2e7d32;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  box-shadow:
+    0 10px 25px rgba(76, 175, 80, 0.10);
+}
+
+/* ===== Heading ===== */
+
+.digital-confidence h2 {
+  position: relative;
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 850;
+
+  line-height: 1.08;
+  letter-spacing: -2px;
+
+  margin-bottom: 26px;
+
+  color: #102418;
+
+  animation: fadeUp 1s ease;
+}
+
+/* Gradient Highlight */
+.digital-confidence h2 span {
+  background: linear-gradient(
+    135deg,
+    #2e7d32,
+    #43a047,
+    #00c896
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+}
+
+/* Glow under text */
+.digital-confidence h2 span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 8px;
+
+  width: 100%;
+  height: 16px;
+
+  background: rgba(67, 160, 71, 0.18);
+
+  filter: blur(12px);
+
+  z-index: -1;
+}
+
+/* ===== Paragraph ===== */
+
+.digital-confidence p {
+  max-width: 760px;
+
+  margin: 0 auto 48px;
+
+  font-size: 1.18rem;
+  line-height: 1.95;
+
+  color: #52615a;
+
+  opacity: 0.95;
+
+  animation: fadeUp 1.2s ease;
+}
+
+/* ===== CTA Buttons ===== */
+
+.digital-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+
+  flex-wrap: wrap;
+
+  margin-top: 10px;
+
+  animation: fadeUp 1.4s ease;
+}
+
+/* ===== Primary Button ===== */
+
+.digital-btn {
+  position: relative;
+  overflow: hidden;
+
+  border: none;
+  outline: none;
+
+  padding: 18px 38px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #2e7d32,
+    #43a047,
+    #00c896
+  );
+
+  color: #fff;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+    0 16px 35px rgba(46, 125, 50, 0.25),
+    0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Shine Animation */
+.digital-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+
+  transition: 0.8s;
+}
+
+.digital-btn:hover::before {
+  left: 120%;
+}
+
+/* Hover */
+.digital-btn:hover {
+  transform:
+    translateY(-6px)
+    scale(1.03);
+
+  box-shadow:
+    0 24px 55px rgba(46, 125, 50, 0.35),
+    0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Secondary Button ===== */
+
+.digital-btn-secondary {
+  padding: 18px 34px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(46, 125, 50, 0.14);
+
+  background: rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(10px);
+
+  color: #1f2937;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.digital-btn-secondary:hover {
+  transform: translateY(-5px);
+
+  background: #fff;
+
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Stats Cards ===== */
+
+.digital-stats {
+  margin-top: 70px;
+
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+
+  flex-wrap: wrap;
+}
+
+/* Card */
+.stat-card {
+  min-width: 220px;
+
+  padding: 30px 28px;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.06);
+
+  transition: all 0.4s ease;
+}
+
+/* Hover */
+.stat-card:hover {
+  transform:
+    translateY(-10px)
+    scale(1.03);
+
+  box-shadow:
+    0 24px 60px rgba(46, 125, 50, 0.14);
+}
+
+/* Number */
+.stat-card h3 {
+  font-size: 2.2rem;
+  font-weight: 850;
+
+  margin-bottom: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #2e7d32,
+    #00c896
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Label */
+.stat-card p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: #5f6d65;
+}
+
+/* ===== Fade Animation ===== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+
+  .digital-confidence {
+    padding: 90px 20px;
+  }
+
+  .digital-confidence h2 {
+    font-size: 3.2rem;
+    letter-spacing: -1px;
+  }
+
+  .digital-confidence p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .digital-buttons {
+    flex-direction: column;
+  }
+
+  .digital-btn,
+  .digital-btn-secondary {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .digital-stats {
+    gap: 18px;
+  }
+
+  .stat-card {
+    width: 100%;
+    max-width: 340px;
+  }
+}

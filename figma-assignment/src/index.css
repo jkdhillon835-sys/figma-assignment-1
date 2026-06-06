@@ -1,0 +1,573 @@
+/* =========================================================
+   FULLY RESPONSIVE PREMIUM index.css
+   PERFECT FOR:
+   ✔ Mobile
+   ✔ Tablet
+   ✔ Laptop
+   ✔ Desktop
+   ✔ 4K Screens
+========================================================= */
+
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================================
+   CSS RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+  /* COLORS */
+
+  --bg: #ffffff;
+
+  --text: #5f6675;
+
+  --heading: #0f172a;
+
+  --primary: #5b5fff;
+
+  --secondary: #00b7ff;
+
+  --border:
+    rgba(15, 23, 42, 0.08);
+
+  --glass:
+    rgba(255,255,255,0.72);
+
+  --shadow:
+    0 10px 40px rgba(0,0,0,0.08);
+
+  /* TYPOGRAPHY */
+
+  --font:
+    "Inter",
+    system-ui,
+    sans-serif;
+
+  /* CONTAINER */
+
+  --container:
+    min(1400px, 92vw);
+
+  /* RADIUS */
+
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+
+  /* TRANSITION */
+
+  --transition:
+    all 0.35s ease;
+}
+
+/* =========================================================
+   HTML
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+  font-family: var(--font);
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  overflow-x: hidden;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  line-height: 1.7;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* =========================================================
+   GLOBAL CONTAINER
+========================================================= */
+
+.container {
+
+  width: var(--container);
+
+  margin-inline: auto;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+
+  width: 100%;
+
+  position: relative;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  color: var(--heading);
+
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+h1 {
+
+  font-size:
+    clamp(
+      2.7rem,
+      7vw,
+      6.5rem
+    );
+
+  letter-spacing: -3px;
+}
+
+h2 {
+
+  font-size:
+    clamp(
+      2rem,
+      5vw,
+      4.5rem
+    );
+
+  letter-spacing: -2px;
+}
+
+h3 {
+
+  font-size:
+    clamp(
+      1.2rem,
+      2vw,
+      1.8rem
+    );
+}
+
+p {
+
+  font-size:
+    clamp(
+      0.95rem,
+      1.2vw,
+      1.1rem
+    );
+
+  line-height: 1.9;
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+
+  text-decoration: none;
+
+  color: inherit;
+
+  transition: var(--transition);
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+
+  border: none;
+
+  outline: none;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+img {
+
+  width: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   ULTRA RESPONSIVE GRID SYSTEM
+========================================================= */
+
+.grid {
+
+  display: grid;
+
+  gap: clamp(18px, 2vw, 32px);
+}
+
+.grid-2 {
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+}
+
+.grid-3 {
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+}
+
+.grid-auto {
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    );
+}
+
+/* =========================================================
+   FLEX UTILITIES
+========================================================= */
+
+.flex {
+
+  display: flex;
+}
+
+.flex-center {
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================================================
+   GLASS EFFECT
+========================================================= */
+
+.glass {
+
+  background: var(--glass);
+
+  backdrop-filter: blur(14px);
+
+  border:
+    1px solid rgba(255,255,255,0.5);
+
+  box-shadow: var(--shadow);
+}
+
+/* =========================================================
+   PREMIUM CARD
+========================================================= */
+
+.card {
+
+  background: #fff;
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow);
+
+  transition: var(--transition);
+
+  overflow: hidden;
+}
+
+.card:hover {
+
+  transform:
+    translateY(-10px);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.12);
+}
+
+/* =========================================================
+   SPACING SYSTEM
+========================================================= */
+
+.py-xl {
+
+  padding-block:
+    clamp(90px, 10vw, 140px);
+}
+
+.py-lg {
+
+  padding-block:
+    clamp(70px, 8vw, 110px);
+}
+
+.py-md {
+
+  padding-block:
+    clamp(50px, 6vw, 80px);
+}
+
+.px {
+
+  padding-inline:
+    clamp(18px, 4vw, 40px);
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+
+  background:
+    rgba(0,0,0,0.04);
+}
+
+::-webkit-scrollbar-thumb {
+
+  background:
+    linear-gradient(
+      180deg,
+      #5b5fff,
+      #00b7ff
+    );
+
+  border-radius: 999px;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  html {
+    font-size: 18px;
+  }
+
+  :root {
+
+    --container:
+      min(1600px, 88vw);
+  }
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  html {
+    font-size: 15.5px;
+  }
+
+  :root {
+
+    --container:
+      min(1100px, 94vw);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+  html {
+    font-size: 15px;
+  }
+
+  .grid-3 {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0,1fr)
+      );
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    letter-spacing: -1px;
+  }
+}
+
+/* =========================================================
+   MOBILE LARGE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  html {
+    font-size: 14.5px;
+  }
+
+  :root {
+
+    --container:
+      min(100%, 94vw);
+  }
+
+  .grid-2,
+  .grid-3 {
+
+    grid-template-columns: 1fr;
+  }
+
+  .flex-between {
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  body {
+
+    line-height: 1.65;
+  }
+
+  h1 {
+
+    line-height: 1.15;
+  }
+
+  p {
+
+    line-height: 1.8;
+  }
+}
+
+/* =========================================================
+   MOBILE SMALL
+========================================================= */
+
+@media (max-width: 480px) {
+
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+
+    letter-spacing: -1px;
+  }
+
+  h2 {
+
+    letter-spacing: -0.5px;
+  }
+
+  .card {
+
+    border-radius: 24px;
+  }
+
+  .px {
+
+    padding-inline: 16px;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  html {
+    font-size: 13px;
+  }
+
+  .container {
+
+    width: 95vw;
+  }
+}

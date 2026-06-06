@@ -1,0 +1,264 @@
+/* ===== Collaboration Section ===== */
+
+.collaboration {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 30px;
+  text-align: center;
+
+  /* Modern gradient background */
+  background:
+    radial-gradient(circle at top left, rgba(120, 119, 255, 0.25), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(0, 183, 255, 0.18), transparent 40%),
+    linear-gradient(135deg, #f6f9ff 0%, #eef4ff 45%, #f4f7ff 100%);
+
+  border-radius: 40px;
+
+  /* Soft glass effect */
+  backdrop-filter: blur(12px);
+
+  /* Depth */
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  isolation: isolate;
+}
+
+/* Decorative glowing blur */
+.collaboration::before,
+.collaboration::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+}
+
+.collaboration::before {
+  top: -120px;
+  left: -100px;
+  background: rgba(123, 92, 255, 0.25);
+}
+
+.collaboration::after {
+  bottom: -140px;
+  right: -100px;
+  background: rgba(0, 183, 255, 0.2);
+}
+
+/* Small top badge */
+.collaboration .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 22px;
+  margin-bottom: 28px;
+
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #5a4bff;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 4px 18px rgba(90, 75, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Main heading */
+.collaboration h2 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+
+  margin-bottom: 28px;
+
+  background: linear-gradient(
+    135deg,
+    #1d1d1f 0%,
+    #4b4bff 45%,
+    #00a6ff 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 5px 30px rgba(75, 75, 255, 0.15);
+}
+
+/* Description text */
+.collaboration p {
+  max-width: 760px;
+  margin: 0 auto;
+
+  font-size: 1.18rem;
+  line-height: 1.9;
+  font-weight: 400;
+
+  color: #5f6475;
+
+  opacity: 0.95;
+}
+
+/* CTA Buttons Container */
+.collaboration .buttons {
+  margin-top: 45px;
+
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Primary Button */
+.collaboration .btn-primary {
+  position: relative;
+  overflow: hidden;
+
+  padding: 16px 34px;
+  border: none;
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #5b5fff,
+    #7b5cff,
+    #00b7ff
+  );
+
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+    0 12px 30px rgba(91, 95, 255, 0.28),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.collaboration .btn-primary:hover {
+  transform: translateY(-6px) scale(1.03);
+
+  box-shadow:
+    0 20px 45px rgba(91, 95, 255, 0.4),
+    0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Shine effect */
+.collaboration .btn-primary::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+
+  transition: 0.8s;
+}
+
+.collaboration .btn-primary:hover::before {
+  left: 120%;
+}
+
+/* Secondary Button */
+.collaboration .btn-secondary {
+  padding: 16px 34px;
+
+  border-radius: 18px;
+  border: 1px solid rgba(120, 120, 255, 0.2);
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.collaboration .btn-secondary:hover {
+  transform: translateY(-5px);
+
+  background: #fff;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.collaboration {
+  animation: float 7s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .collaboration {
+    padding: 90px 22px;
+    border-radius: 28px;
+  }
+
+  .collaboration h2 {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+
+  .collaboration p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .collaboration .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .collaboration .btn-primary,
+  .collaboration .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+  }
+}

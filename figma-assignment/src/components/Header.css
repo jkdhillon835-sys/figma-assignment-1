@@ -1,0 +1,566 @@
+/* ===================================================
+   FUTURISTIC RESPONSIVE HEADER
+   Mobile • Tablet • Desktop Optimized
+=================================================== */
+
+.header {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 9999;
+
+  width: min(1400px, calc(100% - 32px));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding:
+    clamp(14px, 1.5vw, 20px)
+    clamp(18px, 3vw, 42px);
+
+  border-radius: 28px;
+
+  isolation: isolate;
+
+  /* Glassmorphism */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 255, 255, 0.62)
+    );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.65);
+
+  /* Premium Shadow */
+  box-shadow:
+    0 12px 40px rgba(15, 23, 42, 0.08),
+    0 2px 12px rgba(91, 95, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+/* Floating Hover */
+.header:hover {
+  transform:
+    translateX(-50%)
+    translateY(-2px);
+
+  box-shadow:
+    0 18px 60px rgba(15, 23, 42, 0.12),
+    0 6px 24px rgba(91, 95, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* ===================================================
+   Animated Border Glow
+=================================================== */
+
+.header::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  padding: 1px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 95, 255, 0.4),
+      rgba(0, 183, 255, 0.3),
+      rgba(0, 200, 150, 0.3)
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask-composite: exclude;
+
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+/* ===================================================
+   Logo
+=================================================== */
+
+.logo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  transition: transform 0.35s ease;
+}
+
+/* Gradient Logo Text */
+.logo span {
+  background:
+    linear-gradient(
+      135deg,
+      #5b5fff 0%,
+      #7b5cff 35%,
+      #00b7ff 70%,
+      #00c896 100%
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Logo Hover */
+.logo:hover {
+  transform: scale(1.04);
+}
+
+/* ===================================================
+   Animated Dot
+=================================================== */
+
+.logo::after {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00b7ff,
+      #00c896
+    );
+
+  box-shadow:
+    0 0 12px rgba(0, 183, 255, 0.9),
+    0 0 24px rgba(0, 200, 150, 0.6);
+
+  animation: pulseDot 2.5s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulseDot {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.45);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===================================================
+   Navigation
+=================================================== */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===================================================
+   Navigation Links
+=================================================== */
+
+.nav a {
+  position: relative;
+
+  padding:
+    clamp(10px, 1vw, 14px)
+    clamp(14px, 1.8vw, 22px);
+
+  border-radius: 16px;
+
+  font-size: clamp(0.92rem, 1vw, 1rem);
+
+  font-weight: 650;
+
+  color: #344054;
+
+  transition: all 0.35s ease;
+
+  overflow: hidden;
+}
+
+/* Background Hover Glow */
+.nav a::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 95, 255, 0.12),
+      rgba(0, 183, 255, 0.12)
+    );
+
+  opacity: 0;
+
+  transform: scale(0.82);
+
+  transition: all 0.35s ease;
+
+  z-index: -1;
+}
+
+/* Animated Underline */
+.nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 7px;
+
+  width: 0%;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #5b5fff,
+      #00b7ff,
+      #00c896
+    );
+
+  transform: translateX(-50%);
+
+  transition: width 0.35s ease;
+}
+
+/* Hover */
+.nav a:hover {
+  color: #4f46e5;
+
+  transform: translateY(-2px);
+}
+
+.nav a:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav a:hover::after {
+  width: 65%;
+}
+
+/* ===================================================
+   Active Link
+=================================================== */
+
+.nav a.active {
+  background:
+    linear-gradient(
+      135deg,
+      #5b5fff,
+      #7b5cff,
+      #00b7ff
+    );
+
+  color: white;
+
+  box-shadow:
+    0 10px 24px rgba(91, 95, 255, 0.28);
+}
+
+/* ===================================================
+   CTA Button
+=================================================== */
+
+.header-btn {
+  position: relative;
+  overflow: hidden;
+
+  border: none;
+  outline: none;
+
+  padding:
+    clamp(12px, 1vw, 16px)
+    clamp(20px, 2vw, 28px);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5b5fff,
+      #7b5cff,
+      #00b7ff
+    );
+
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+    0 12px 28px rgba(91, 95, 255, 0.28);
+}
+
+/* Shine */
+.header-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
+
+  transition: 0.8s;
+}
+
+.header-btn:hover::before {
+  left: 120%;
+}
+
+/* Hover */
+.header-btn:hover {
+  transform:
+    translateY(-4px)
+    scale(1.03);
+
+  box-shadow:
+    0 18px 40px rgba(91, 95, 255, 0.38);
+}
+
+/* ===================================================
+   Mobile Menu Button
+=================================================== */
+
+.menu-btn {
+  display: none;
+
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(14px);
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+}
+
+/* Hover */
+.menu-btn:hover {
+  transform: scale(1.06);
+
+  background: white;
+}
+
+/* Hamburger Lines */
+.menu-btn span {
+  position: relative;
+
+  display: block;
+
+  width: 22px;
+  height: 2px;
+
+  background: #111827;
+
+  border-radius: 999px;
+}
+
+.menu-btn span::before,
+.menu-btn span::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: inherit;
+
+  border-radius: inherit;
+}
+
+.menu-btn span::before {
+  top: -7px;
+}
+
+.menu-btn span::after {
+  top: 7px;
+}
+
+/* ===================================================
+   Tablet
+=================================================== */
+
+@media (max-width: 992px) {
+
+  .header {
+    width: calc(100% - 24px);
+
+    border-radius: 24px;
+  }
+
+  .nav {
+    gap: 2px;
+  }
+
+  .nav a {
+    padding: 10px 14px;
+  }
+
+  .header-btn {
+    display: none;
+  }
+}
+
+/* ===================================================
+   Mobile Navigation
+=================================================== */
+
+@media (max-width: 768px) {
+
+  .header {
+    padding:
+      14px 18px;
+
+    top: 12px;
+
+    border-radius: 20px;
+  }
+
+  .nav {
+    position: absolute;
+
+    top: calc(100% + 14px);
+    left: 0;
+
+    width: 100%;
+
+    padding: 18px;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 10px;
+
+    border-radius: 24px;
+
+    background:
+      rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(22px);
+
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.10);
+  }
+
+  /* Show Mobile Nav */
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 14px;
+  }
+
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ===================================================
+   Small Mobile
+=================================================== */
+
+@media (max-width: 480px) {
+
+  .header {
+    width: calc(100% - 16px);
+
+    padding:
+      12px 14px;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .menu-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .nav {
+    padding: 14px;
+  }
+}
